@@ -1,23 +1,23 @@
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Homepage from "./pages/Homepage";
+import Offerpage from "./pages/Offerpage";
 
 function App() {
   return (
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>App</title>
-      </head>
-      <body>
-        <h1>TAMIL</h1>
-        <h1>TAMIL</h1>
-        <h1>TAMIL</h1>
-        <h1>TAMIL</h1>
-        <h1>TAMIL</h1>
-        <h1>TAMIL</h1>
-      </body>
-    </html>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/offerpage" element={<Offerpage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
